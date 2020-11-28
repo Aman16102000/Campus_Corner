@@ -54,8 +54,14 @@ public class SignUp extends  HttpServlet{
 			}
 			else {
 				ps.executeUpdate();
-				RequestDispatcher rd=req.getRequestDispatcher("student.jsp");
-				rd.forward(req, res);
+				   String createCommand="create table blog"+userId+" (blogid int, blogContent varchar(255))";
+					  PreparedStatement pst =con.prepareStatement(createCommand);
+					  pst.executeUpdate();
+				out.println("Account has been created."
+						+ "<br>"
+						+ "Sign In to open your profile");
+				RequestDispatcher rd=req.getRequestDispatcher("SignUp.html");
+				rd.include(req, res);
 			}
 			
 			

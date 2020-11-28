@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<%@ page import = " java.sql.* " %>
+<%@ page import = " com.database.Dao" %>
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -11,8 +14,28 @@
     
 </head>
 <body>
-<h1>Welcome Student page</h1>
+<div class="container">
 
+<div class="row">
+  <div class="col-12 col-sm-12" >
+  <div align="center">
+ <h1> Welcome <%
+   String userid=request.getParameter("Userid");
+  out.println(" "+userid);
+  Connection con=Dao.getDbConnection();
+  session.setAttribute("Userid",userid);
+//  System.out.println(selectQ);
+	  %></h1>
+	  
+	  </div>
+	  </div>
+</div>
+<div class="row">
+  <div class="col-12 col-sm-3">
+    <a href="Blog.jsp"><input type="button" class="btn btn-primary" value="My Blog's"></a>
+  </div>
+</div>
+</div>
 
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
