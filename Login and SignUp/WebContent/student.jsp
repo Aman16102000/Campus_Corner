@@ -34,6 +34,9 @@
   <div class="col-12 col-sm-3">
     <a href="Blog.jsp"><input type="button" class="btn btn-primary" value="My Blog's"></a>
   </div>
+  <div class="col-12 col-sm-3">
+    <a href="addBlog.jsp"><input type="button" class="btn btn-primary" value="Write Blog"></a>
+  </div>
 </div>
 </div>
 
