@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 
-<body>
+<body >
 <%
 String uid=(String)session.getAttribute("uid");
 String blogContent=request.getParameter("blog");
@@ -19,10 +19,12 @@ Connection con=Dao.getDbConnection();
           PreparedStatement ps =con.prepareStatement("insert into "+tableName+" values(?,?)");
           ps.setString(1, "1");
           ps.setString(2, blogContent);
-          
+          out.println("blog posted");
          ps.executeUpdate();
          
-         out.println("blog added");
+        
  %>
 </body>
+
+
 </html>
